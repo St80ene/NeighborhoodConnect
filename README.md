@@ -1,2 +1,2 @@
 # NeighborhoodConnect
-Connect to local stores and service providers(Artisans) near you
+Connecting People to nearby local stores and service providers(Artisans)
