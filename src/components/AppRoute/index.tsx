@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { Layout, Menu } from "antd";
+import "../../index.css";
 
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 
 export const AppLayout = () => {
   const navItems = [{ title: "Profile", route: "/profile" }];
@@ -17,20 +18,16 @@ export const AppLayout = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          backgroundColor: "#fff",
           padding: "0 20px",
         }}
       >
         <div>
-          <span
-            style={{ color: "white", fontSize: "20px", fontWeight: "bold" }}
-          >
-            Logo
-          </span>
+          <p className="text-gray-600">Logo</p>
         </div>
         <Menu
-          theme="dark"
+          // theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["1"]}
           items={navItems.map(({ route, title }) => ({
             key: route,
             label: title,
@@ -39,9 +36,11 @@ export const AppLayout = () => {
         />
       </Header>
       <Content>
-        <Outlet />
+        <div className="">
+          <Outlet />
+        </div>
       </Content>
-      <Footer
+      {/* <Footer
         style={{
           textAlign: "center",
           position: "fixed",
@@ -50,7 +49,7 @@ export const AppLayout = () => {
         }}
       >
         Footer
-      </Footer>
+      </Footer> */}
     </Layout>
   );
 };
